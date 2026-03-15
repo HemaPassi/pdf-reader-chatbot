@@ -1,6 +1,10 @@
 import cors from "cors";
 
 import express from "express";
+import path from "path";
+import dotenv from "dotenv";
+
+
 import { generate } from "./chat.js";
 
 const app = express();
@@ -9,9 +13,21 @@ const PORT = 3001;
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("Welcome to Chatbot- giving answer from PDF!");
+dotenv.config();
+
+// Serve static frontend
+app.use(express.static(path.join(__dirname)));
+
+// Root route
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
+
+
+// app.get("/", (req, res) => {
+//   res.send("Welcome to Chatbot- giving answer from PDF!");
+// });
+
 
 app.post("/chat", async (req, res) => {
   const { message, threadId } = req.body;
