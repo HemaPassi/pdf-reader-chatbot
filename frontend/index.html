@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Get details from PDF</title>
+  </head>
+  <body class="bg-neutral-900 text-white overflow-x-hidden">
+    <div class="container mx-auto max-w-3xl pb-50 px-2" id="chat-container">
+      <h1 class="text-3xl font-bold underline">Welcome to Chatbot - from PDF !</h1>
+   
+    <div
+      class="fixed bottom-0 flex inset-x-50  item-center justify-center bg-neutral-900"
+    >
+      <div class="bg-neutral-800 flex p-2 rounded-xl max-width-3xl ml-auto w-full  mb-5">
+        <textarea
+          class="w-full resize-none outline-0 p-4"
+          rows="2"
+          id="input"
+        ></textarea>
+        <div class="flex justify-end items-center">
+          <button
+            id="ask"
+            class="bg-white px-4 py-1 text-block rounded-full text-black cursor-pointer hover:bg-gray-300 "
+          >
+            Ask
+          </button>
+        </div>
+      </div>
+    </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -17,6 +17,9 @@ export const vectorStore = await PineconeStore.fromExistingIndex(embeddings, {
   maxConcurrency: 5,
 });
 
+
+const filePaths = "./resume.pdf";
+
 export async function indexTheDocuments(filePaths) {
   // stage 1: indexing
   // 1. load the documents - pdf, text
@@ -42,3 +45,5 @@ export async function indexTheDocuments(filePaths) {
 
   await vectorStore.addDocuments(documents);
 }
+
+indexTheDocuments(filePaths);
