@@ -1,9 +1,14 @@
 import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf";
 import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
 
+import dotenv from "dotenv";
+
 import { OpenAIEmbeddings } from "@langchain/openai";
 import { PineconeStore } from "@langchain/pinecone";
 import { Pinecone as PineconeClient } from "@pinecone-database/pinecone";
+
+dotenv.config();
+
 
 const embeddings = new OpenAIEmbeddings({
   model: "text-embedding-3-small",

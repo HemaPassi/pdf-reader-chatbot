@@ -4,6 +4,10 @@ import express from "express";
 import path from "path";
 import dotenv from "dotenv";
 
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 import { generate } from "./chat.js";
 
@@ -20,7 +24,7 @@ app.use(express.static(path.join(__dirname)));
 
 // Root route
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, '/frontend/index.html'));
 });
 
 
