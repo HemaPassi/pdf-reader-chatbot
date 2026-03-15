@@ -1,0 +1,25 @@
+.env.development
+.env
+
+node_modules
+
+
+dist
+build   
+
+*.o
+*.log
+*.tmp   
+.DS_Store
+
+*.exe
+*.out
+
+/bin/
+
+_obj
+_test
+vendor/
+
+# logs
+*.log
